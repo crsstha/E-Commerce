@@ -1,0 +1,107 @@
+img {
+    height: 80px;
+}
+.card {
+    background: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+.productsWrapper {
+    margin-left:20vh;
+    margin-Right:20vh;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+.cartWrapper {
+    margin-left:20vh;
+    margin-Right:20vh;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+}
+.btn {
+    border: none;
+    outline: none;
+    background: green;
+    padding: 5px 10px;
+    color: #fff;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.btn-Remove{
+    border: none;
+    outline: none;
+    background: red;
+    padding: 5px 10px;
+    color: #fff;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background: #513282;
+}
+
+.heading {
+    padding: 25px 0;
+    text-align: center;
+}
+.cartCount {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-left: 40px;
+}
+.navLink {
+    text-decoration: none;
+    color: black;
+    margin-left: 20px;
+}
+
+.cartCard {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    margin-bottom: 20px;
+    padding: 14px;
+    border-radius: 5px;
+}
+.heading_total{
+    border-top: 2px solid rgba(86, 82, 82, 0.5);
+
+    margin: auto;
+  width: 50%;
+    padding: 25px 0;
+    text-align: center;
+    font-family: 'Aboreto', cursive;
+}
+
+.top{
+    display: flex;
+    justify-content: space-around;
+    margin-right: 80px;
+    font-family: 'Aboreto', cursive;
+}
+.header{
+    flex: 1;
+    text-align: center;
+}
+.link{
+    text-decoration: none ;
+    border: rgb(146, 143, 143) solid;
+    padding: 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+.link:hover {
+    background: green;
+    color: white;
+    cursor: pointer;
+}
+

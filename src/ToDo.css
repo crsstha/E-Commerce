@@ -1,0 +1,53 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap');
+
+.App {
+  text-align: center;
+  margin: auto;
+  padding: 10px;
+  padding-bottom: 50px;
+  WIDTH: 50%;
+  height: fit-content;
+  background-color: white;
+  margin-top: 50px;
+  border-radius: 40px;
+  box-shadow: 0px -2px 55px -2px lightseagreen;
+  font-family: 'Aboreto', cursive;
+}
+
+.task{
+  background-color: whitesmoke;
+  color: rgb(234, 46, 46);
+  width: 500px;
+  margin: auto;
+  height: 55px;
+  text-align: left;
+  font-size: 26px;
+  border-radius: 40px;
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  padding-left: 43px;
+  font-family: 'Teko', sans-serif;
+}
+#btn{
+  height: 55px;
+  width: 0%;
+  margin-left: 10px;
+}
+
+#btn-2{
+margin-top: 20px;
+display: block;
+  margin-left: auto;
+  margin-right: 20vh;
+}
+
+.heading{
+  font-family: 'Aboreto', cursive;
+}
