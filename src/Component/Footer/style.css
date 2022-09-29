@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Smooch&display=swap");
+.footer__container {
+  height: 40vh;
+  list-style: none;
+}
+.footer {
+  margin-top: 5vh;
+  margin-left: 20vh;
+  margin-right: 20vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+#footer__heading {
+  font-family: "Smooch", cursive;
+  font-size: 50px;
+  color: #017b8e;
+  margin: 0;
+  padding: 0;
+}
+.contact span {
+  font-weight: 700;
+}
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer li {
+  margin-top: 10px;
+}
+
+.footer__left,
+.footer__center,
+.footer__right {
+  padding-left: 90px;
+  color: rgb(61, 61, 61);
+}
+.copyright {
+  text-align: center;
+  color: rgb(61, 61, 61);
+}
+a:-webkit-any-link {
+  text-decoration: none;
+  color: black;
+}
+
+a:-webkit-any-link:hover {
+  color: #017b8e;
+}
+
+@media only screen and (max-width: 400px) {
+  .footer {
+    margin-left: 0vh;
+    margin-right: 0vh;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .footer__container {
+    height: max-content;
+    margin-bottom: 5vh;
+  }
+}

@@ -1,0 +1,126 @@
+.checkout__header {
+  background-image: url("../../Images/banner.png");
+  background-position: center;
+  width: 100%;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-family: "Combo", cursive;
+  font-size: 40px;
+  margin-bottom: 50px;
+}
+
+.checkout__header h1 {
+  color: white;
+  font-size: 100px;
+  text-transform: uppercase;
+}
+.checkout__container {
+  background-color: white;
+  text-transform: uppercase;
+}
+
+.checkout {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 20vh;
+  margin-right: 20vh;
+}
+.checkout__left {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+.checkout__right {
+  flex: 1;
+}
+
+.checkout__address {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: space-evenly;
+  height: 600px;
+  transition: all 0.5s;
+  position: relative;
+}
+
+.checkout__address input {
+  width: 622px;
+}
+.checkout__address svg {
+  padding-top: 15px;
+  width: 50px;
+}
+
+.cart__item table {
+  margin-top: 10px;
+  border-radius: 20px;
+  padding: 10px;
+  margin-bottom: 20px;
+  margin-left: 1vh;
+  margin-right: 8vh;
+  width: 70%;
+}
+.cart__item img {
+  width: 150px;
+  object-fit: contain;
+}
+.checkout__right Button {
+  background-color: #017b8e;
+  color: white;
+  width: 100%;
+  margin-top: 20px;
+  height: 50px;
+}
+
+.checkout__right Button:hover {
+  background-color: #0ac7e4;
+}
+.checkout h1 {
+  color: #017b8e;
+}
+
+@media only screen and (max-width: 788px) {
+  .checkout {
+    flex-direction: column;
+    margin: 0;
+  }
+  .checkout input {
+    width: max-content;
+  }
+
+  .css-rx3lop-MuiFormControl-root {
+    width: 222px !important;
+  }
+  .css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root {
+    width: 150px;
+  }
+  .cart__item table tbody td {
+    display: flex;
+    flex-direction: column;
+  }
+  .checkout__header h1 {
+    font-size: 65px;
+    margin-top: 90px;
+  }
+  .checkout__header {
+    margin-bottom: 0px !important;
+  }
+  .checkout {
+    padding: 40px;
+    padding-bottom: 40px;
+  }
+  .checkout Button {
+    width: max-content;
+  }
+  .checkout__right,
+  .cart__item {
+    background-color: whitesmoke;
+    padding: 30px;
+    border-radius: 50px;
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+}

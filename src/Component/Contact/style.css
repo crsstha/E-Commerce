@@ -1,0 +1,23 @@
+.contact__container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  margin-left: 40vh;
+  margin-right: 40vh;
+}
+.c__header {
+  margin-left: 40vh;
+  margin-right: 40vh;
+  font-size: 25px;
+}
+@media only screen and (max-width: 788px) {
+  .contact__container {
+    grid-template-columns: auto;
+    margin-left: 2vh;
+    margin-right: 0vh;
+  }
+  .c__header {
+    margin-left: 2vh;
+    margin-right: 0vh;
+    font-size: 25px;
+  }
+}
