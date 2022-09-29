@@ -1,10 +1,13 @@
 import { Button } from "@mui/material";
 import React, { Fragment } from "react";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+
 import "./style.css";
 
 export default function Profile() {
   const { User } = useSelector((state) => state.user.login_user);
+  const history = useNavigate();
   return (
     <Fragment>
       <div className="checkout__header">
@@ -38,6 +41,7 @@ export default function Profile() {
                 sx={{ marginRight: 3 }}
                 variant="contained"
                 color="success"
+                onClick={() => history("update")}
               >
                 Edit
               </Button>

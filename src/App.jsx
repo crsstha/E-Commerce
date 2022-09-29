@@ -19,6 +19,7 @@ import CheckoutBuy from "./Element/Checkout/CheckoutBuy";
 import AllProduct from "./Element/Product/AllProduct";
 import Profile from "./Component/Profile";
 import Contact from "./Component/Contact";
+import Register from "./Component/Profile/Register";
 
 export default function App() {
   useEffect(() => {
@@ -38,6 +39,7 @@ export default function App() {
         <Route path="/orders" element={<Order />} />
         <Route path="/order/:id" element={<OrderDetail />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/profile/update" element={<Register />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <ToastContainer

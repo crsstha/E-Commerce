@@ -26,6 +26,7 @@
 }
 
 .bottom {
+  margin-top: 10px;
   display: grid;
   column-gap: 50px;
   grid-template-columns: auto auto;
@@ -42,6 +43,10 @@
   height: 270px;
   border-radius: 50%;
   border-style: solid;
+}
+.update {
+  display: flex;
+  flex-direction: column;
 }
 
 @media only screen and (max-width: 788px) {
