@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { STATUSES } from "../../utils";
-import { loadUser, login, logout } from "./action";
+import { loadUser, login, logout, updateUser } from "./action";
 
 const loginSlice = createSlice({
   name: "login",
@@ -79,6 +79,20 @@ const loginSlice = createSlice({
         state.isLogin = false;
       })
       .addCase(logout.rejected, (state, action) => {
+        state.status = STATUSES.ERROR;
+        state.isLogin = false;
+      })
+
+      .addCase(updateUser.pending, (state, action) => {
+        state.status = STATUSES.LOADING;
+        state.isLogin = false;
+      })
+      .addCase(updateUser.fulfilled, (state, action) => {
+        state.login_user = action.payload;
+        state.status = STATUSES.IDLE;
+        state.isLogin = true;
+      })
+      .addCase(updateUser.rejected, (state, action) => {
         state.status = STATUSES.ERROR;
         state.isLogin = false;
       });

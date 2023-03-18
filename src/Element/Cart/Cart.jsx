@@ -27,67 +27,71 @@ export default function Cart() {
         <h2>Cart item: {cartitems.length}</h2>
       </div>
       <div className="cartWrapper">
-        <table className="table">
-          <thead id="theading">
-            <tr>
-              <th>Remove</th>
-              <th>Image</th>
-              <th>Product</th>
-              <th>Price</th>
-              <th>Quantity</th>
-              <th>Subtotal</th>
-            </tr>
-          </thead>
+        {cartitems.length === 0 ? (
+          <div> No Product in Cart</div>
+        ) : (
+          <table className="table">
+            <thead id="theading">
+              <tr>
+                <th>Remove</th>
+                <th>Image</th>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Subtotal</th>
+              </tr>
+            </thead>
 
-          {cartitems.map((cartitems) => {
-            return (
-              <tbody>
-                <tr key={cartitems.id}>
-                  <td>
-                    <button
-                      onClick={() => {
-                        dispatch(deleteCart(cartitems));
-                        toast.error("Product is Removed from Cart");
-                      }}
-                      className="btn-Remove"
-                    >
-                      {" "}
-                      Remove
-                    </button>
-                  </td>
-                  <td>
-                    <img src={cartitems.thumbnail} alt="" />
-                  </td>
-                  <td>
-                    <p>{cartitems.title}</p>
-                  </td>
-                  <td>रू{cartitems.price}</td>
-                  <td>
-                    <h5>
-                      {" "}
-                      <Button
+            {cartitems.map((cartitems) => {
+              return (
+                <tbody>
+                  <tr key={cartitems.id}>
+                    <td>
+                      <button
                         onClick={() => {
-                          dispatch(decreaseCart(cartitems));
+                          dispatch(deleteCart(cartitems));
+                          toast.error("Product is Removed from Cart");
                         }}
+                        className="btn-Remove"
                       >
-                        -
-                      </Button>{" "}
-                      {cartitems.cartQuantity}{" "}
-                      <Button
-                        onClick={() => {
-                          dispatch(increaseCart(cartitems));
-                        }}
-                      >
-                        +
-                      </Button>{" "}
-                    </h5>
-                  </td>
-                  <td>रू{cartitems.price * cartitems.cartQuantity}</td>
-                </tr>
-              </tbody>
-            );
-          })}
-        </table>
+                        {" "}
+                        Remove
+                      </button>
+                    </td>
+                    <td>
+                      <img src={cartitems.thumbnail} alt="" />
+                    </td>
+                    <td>
+                      <p>{cartitems.title}</p>
+                    </td>
+                    <td>रू{cartitems.price}</td>
+                    <td>
+                      <h5>
+                        {" "}
+                        <Button
+                          onClick={() => {
+                            dispatch(decreaseCart(cartitems));
+                          }}
+                        >
+                          -
+                        </Button>{" "}
+                        {cartitems.cartQuantity}{" "}
+                        <Button
+                          onClick={() => {
+                            dispatch(increaseCart(cartitems));
+                          }}
+                        >
+                          +
+                        </Button>{" "}
+                      </h5>
+                    </td>
+                    <td>रू{cartitems.price * cartitems.cartQuantity}</td>
+                  </tr>
+                </tbody>
+              );
+            })}
+          </table>
+        )}
       </div>
 
       <div className="cart__bottom">

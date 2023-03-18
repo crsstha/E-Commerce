@@ -14,8 +14,9 @@
 .order__list {
   display: flex;
   flex-direction: column;
-  margin: 20vh;
-  margin-top: 5vh;
+  margin: 0vh;
+  padding: 20vh;
+  padding-top: 0vh;
   background: rgba(123, 163, 196, 0.2);
 }
 .orders,
@@ -25,7 +26,6 @@
   align-items: flex-start;
   margin-bottom: 20px;
   padding: 20px;
-  width: 100%;
   text-align: center;
 }
 .order__header {
@@ -140,6 +140,9 @@
 }
 
 @media only screen and (max-width: 788px) {
+  .order__list {
+    padding: 0vh;
+  }
   .order__container {
     font-size: 12px;
   }

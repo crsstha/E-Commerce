@@ -2,9 +2,14 @@ import { Button, TextField } from "@mui/material";
 import React from "react";
 import { useState } from "react";
 import { Fragment } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import { updateUser } from "../../Element/Login/action";
 
 export default function Register() {
+  const history = useNavigate();
+  const dispatch = useDispatch();
   const { User } = useSelector((state) => state.user.login_user);
   const [values, setValues] = useState({
     firstName: "",
@@ -24,7 +29,7 @@ export default function Register() {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    const myForm = new FormData();
+    const updatedValue = {};
     if (
       values.firstName === "" &&
       values.lastName === "" &&
@@ -34,36 +39,34 @@ export default function Register() {
       values.username === "" &&
       values.about === ""
     ) {
-      alert.success("No Updates");
+      toast.success("No Updates");
     } else {
       if (values.firstName !== "") {
-        myForm.set("firstName", values.firstName);
+        updatedValue.firstName = values.firstName;
       }
       if (values.lastName !== "") {
-        myForm.set("lastName", values.lastName);
+        updatedValue.lastName = values.lastName;
       }
       if (values.dob !== "") {
-        myForm.set("dob", values.dob);
+        updatedValue.dob = values.dob;
       }
       if (values.email !== "") {
-        myForm.set("email", values.email);
+        updatedValue.email = values.email;
       }
       if (values.phone !== "") {
-        myForm.set("phone", values.phone);
+        updatedValue.phone = values.phone;
       }
       if (values.username !== "") {
-        myForm.set("username", values.username);
+        updatedValue.username = values.username;
       }
       if (values.about !== "") {
-        myForm.set("about", values.about);
+        updatedValue.about = values.about;
       }
-      console.log(myForm);
-
-      //dispatch(updateProfile(myForm));
+      dispatch(updateUser(updatedValue));
+      toast.success("Update Successful");
+      history("/profile");
     }
   };
-
-  console.log(values);
   return (
     <Fragment>
       <div className="checkout__header">
@@ -78,9 +81,9 @@ export default function Register() {
               <TextField
                 sx={{ marginBottom: 1 }}
                 placeholder={User && User.about}
-                multiline
                 rows={10}
-                maxRows={10}
+                multiline
+                label="About"
                 onChange={handleChange}
               ></TextField>
             </div>
@@ -125,33 +128,45 @@ export default function Register() {
               <div className="update">
                 <TextField
                   sx={{ marginBottom: 1 }}
-                  placeholder={User && User.username}
+                  name="username"
+                  label={User && User.username}
                   onChange={handleChange}
+                  value={values.username}
+                ></TextField>
+                <TextField
+                  name="firstName"
+                  sx={{ marginBottom: 1 }}
+                  label={User && User.firstName}
+                  onChange={handleChange}
+                  value={values.firstName}
+                ></TextField>
+                <TextField
+                  name="lastName"
+                  sx={{ marginBottom: 1 }}
+                  label={User && User.lastName}
+                  onChange={handleChange}
+                  value={values.lastName}
+                ></TextField>
+                <TextField
+                  name="email"
+                  sx={{ marginBottom: 1 }}
+                  label={User && User.email}
+                  onChange={handleChange}
+                  value={values.email}
+                ></TextField>
+                <TextField
+                  name="phone"
+                  sx={{ marginBottom: 1 }}
+                  label={User && User.phone}
+                  onChange={handleChange}
+                  value={values.phone}
                 ></TextField>
                 <TextField
                   sx={{ marginBottom: 1 }}
-                  placeholder={User && User.firstName}
+                  name="dob"
+                  label={User && User.dob}
                   onChange={handleChange}
-                ></TextField>
-                <TextField
-                  sx={{ marginBottom: 1 }}
-                  placeholder={User && User.lastName}
-                  onChange={handleChange}
-                ></TextField>
-                <TextField
-                  sx={{ marginBottom: 1 }}
-                  placeholder={User && User.email}
-                  onChange={handleChange}
-                ></TextField>
-                <TextField
-                  sx={{ marginBottom: 1 }}
-                  placeholder={User && User.phone}
-                  onChange={handleChange}
-                ></TextField>
-                <TextField
-                  sx={{ marginBottom: 1 }}
-                  placeholder={User && User.dob}
-                  onChange={handleChange}
+                  value={values.dob}
                 ></TextField>
               </div>
             </div>
